@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Homework Three</title>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <form>
+          First Number:<br>
+          <input type="number" id="firstnum" name="firstnum"><br><br>
+          Second Number:<br>
+          <input type="number" id="secondnum" name="secondnum"><br><br>
+          <input type="button" onclick="multiply()" value="Multiply">
+          <input type="button" onclick="divide()" value="Divide">
+        </form><br><br>
+
+        <p id="msg" style="display:none;">The Result is:</p>
+        <p id="result"></p>
+
+        <script>
+
+            function multiply(){
+                var num_1 = document.getElementById("firstnum").value;
+                var num_2 = document.getElementById("secondnum").value;
+
+                document.getElementById("msg").style.display="block";
+                document.getElementById("result").innerHTML =num_1 * num_2;
+            }
+
+            function divide(){
+                var num_1 = document.getElementById("firstnum").value;
+                var num_2 = document.getElementById("secondnum").value;
+
+                if (num_2 == 0) {
+                  alert("Please make sure the second number is not 0");
+                  document.getElementById("msg").style.display="none";
+                  document.getElementById("result").innerHTML = "";
+              }else{
+                  document.getElementById("msg").style.display="block";
+                  document.getElementById("result").innerHTML =num_1 / num_2;
+              }
+            }
+        </script>
+
+
+    </body>
+</html>

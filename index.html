@@ -21,26 +21,35 @@
         <script>
 
             function multiply(){
-                var num_1 = document.getElementById("firstnum").value;
-                var num_2 = document.getElementById("secondnum").value;
+                var num_1 = initialize("firstnum");
+                var num_2 = initialize("secondnum");
 
                 document.getElementById("msg").style.display="block";
                 document.getElementById("result").innerHTML =num_1 * num_2;
             }
 
             function divide(){
-                var num_1 = document.getElementById("firstnum").value;
-                var num_2 = document.getElementById("secondnum").value;
+                var num_1 = initialize("firstnum");
+                var num_2 = initialize("secondnum");
 
                 if (num_2 == 0) {
                   alert("Please make sure the second number is not 0");
-                  document.getElementById("msg").style.display="none";
-                  document.getElementById("result").innerHTML = "";
+                  clear();
               }else{
                   document.getElementById("msg").style.display="block";
                   document.getElementById("result").innerHTML =num_1 / num_2;
               }
             }
+
+            function initialize(id){
+                return document.getElementById(id).value;
+            }
+
+            function clear(){
+                document.getElementById("msg").style.display="none";
+                document.getElementById("result").innerHTML = "";
+            }
+            
         </script>
 
 
